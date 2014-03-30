@@ -1,5 +1,5 @@
 =======================================================================
-webtimer - Measures download times of web page resources.
+WebTimer - Measures download times of web page resources.
 =======================================================================
 
 Overview
@@ -26,8 +26,6 @@ You can invoke the script either as a Python module:
     print wt.times_by_type[CSS]
 
 or as a standalone command line script:
-
-::    
 
     webtimer.py <url>
     
