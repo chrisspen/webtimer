@@ -114,12 +114,14 @@ if __name__ == '__main__':
     print
     print '-'*80
     print 'Download times by URL:'
+    fmt = '%%%d.02f %%s' % len('%.02f' % max(wt.times.values()))
     for url, download_time in sorted(wt.times.iteritems(), key=lambda o:o[1]):
-        print download_time, url
+        print fmt % (download_time, url)
     print '-'*80
     print 'Download times by asset type:'
+    fmt = '%%%d.02f %%6.02f%%%% %%s' % len('%.02f' % max(wt.times_by_type.values()))
     for asset_type, download_time in sorted(wt.times_by_type.iteritems(), key=lambda o:o[1]):
-        print '%.02f %.02f%% %s' % (download_time, download_time/wt.total_download_seconds*100, asset_type)
+        print fmt % (download_time, download_time/wt.total_download_seconds*100, asset_type)
     print '-'*80
-    print 'Total download seconds:',wt.total_download_seconds
+    print 'Total download seconds: %.02f' % wt.total_download_seconds
     
